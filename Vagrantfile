@@ -3,8 +3,6 @@
 OS_NAME="ubuntu1404"
 OS_URL="https://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box"
 
-
-OS_NAME="ubuntu1804"
 VAGRANTFILE_API_VERSION = "2"
 NODE_COUNT = 10
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
