@@ -1,3 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: default
+  name: youtube-dl-nas-deployment-svc
+  labels:
+    app: youtube-dl-nas-deployment
+spec:
+  type: NodePort
+  ports:
+  - name: youtube-dl-nas-deployment-endpoint
+    port: 8080
+    protocol: TCP
+  selector:
+    app: jhslabel
+---
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
@@ -20,20 +36,3 @@ spec:
         image: modenaf360/youtube-dl-nas
         ports:
         - containerPort: 8080
----
-apiVersion: v1
-kind: Service
-metadata:
-  namespace: default
-  name: youtube-dl-nas-deployment-svc
-  labels:
-    app: youtube-dl-nas-deployment
-spec:
-  type: NodePort
-  ports:
-  - name: youtube-dl-nas-deployment-endpoint
-    port: 8080
-    protocol: TCP
-  selector:
-    app: jhslabel
----
