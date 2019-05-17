@@ -30,7 +30,10 @@ chmod 755 /usr/bin/docker-compose
 
 Source="/data/source"
 mkdir -p $Source
-cd $Source 
+cd $Source
+
+## The docker version is forced down to 18.06.1 due to a problem with the ubuntu14 version of docker version support.
+sudo apt-get -y install --force-yes docker-ce=18.06.1~ce~3-0~ubuntu
 
 ## Get the dcs from docker by goody80, really good.
 curl -sL bit.ly/ralf_dcs -o ./dcs
